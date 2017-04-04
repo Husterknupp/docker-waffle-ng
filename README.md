@@ -1,5 +1,7 @@
 # docker-waffle-ng
 
+List docker repos as seen on Docker Hub (https://hub.docker.com/explore/). Also text search should be possible. Backend should talk to public docker hub api.
+
 ### dev mode (hot reload)
 npm start
 
