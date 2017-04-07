@@ -2,12 +2,7 @@ import { Component } from '@angular/core';
 import '../assets/css/styles.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-
-export class Hero {
-  id: number;
-  name: string;
-  hover: boolean;
-}
+import { Hero } from './hero';
 
 const HEROES: Hero[] = [
   { id: 11, hover: false, name: 'Mr. Nice' },

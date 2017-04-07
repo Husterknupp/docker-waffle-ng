@@ -1,11 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { FormsModule }   from '@angular/forms';
-import { AppComponent, Hero } from './app.component';
+import { AppComponent} from './app.component';
+import { HeroDetailComponent } from './hero-detail.component'
+import { Hero } from './hero';
+
 describe('App', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({ 
     	imports: [FormsModule],
-    	declarations: [AppComponent], 
+    	declarations: [AppComponent, HeroDetailComponent]
     });
   });
   it ('should work', () => {
