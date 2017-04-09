@@ -30,16 +30,7 @@ export class AppComponent {
     console.log(event.target.value);
   }
 
-  onHoverOverHero(hero: Hero) {
-  	hero.hover = true;
-  }
-  
-  onHoverHeroOut(hero: Hero) {
-  	hero.hover = false;
-  }
-
 	onSelect(hero: Hero): void {
 	  this.selectedHero = hero;
 	}
-
 }

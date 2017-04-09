@@ -5,20 +5,6 @@
   <!-- TODO always show search bar -->
   <input [(ngModel)]="selectedHero.name" placeholder="name" (keyup)="onKey($event)">
   <div align="left">
-  <!-- todo extract as single component -->
-	  <div *ngFor="let hero of heroes" class="card w-75" 
-	  (mouseover)='onHoverOverHero(hero)' 
-	  (mouseout)='onHoverHeroOut(hero)' 
-	  (click)="onSelect(hero)"
-	  [class.card-outline-warning]="hero.hover">
-		  <div class="card-block">
-		    <h3 class="card-title">{{hero.name}}</h3>
-		    <p class="card-text">{{hero.id}}</p>
-		    <div *ngIf="selectedHero.id == hero.id">
-		    	<hero-detail [hero]="selectedHero"></hero-detail>
-		    </div>
-		    <a href="#" class="btn btn-primary">Button</a>
-		  </div>
-		</div>
+  	<hero-card *ngFor="let hero of heroes" [hero]="hero" [selectedHero]="selectedHero" (click)="onSelect(hero)"></hero-card>
   </div>
 </main>
