@@ -17,14 +17,14 @@ module.exports = function (config) {
     webpack: webpackConfig,
 
     webpackMiddleware: {
-      stats: 'errors-only'
+      stats: 'minimal'
     },
 
     webpackServer: {
       noInfo: true
     },
 
-    reporters: ['kjhtml'],
+    reporters: ['kjhtml', 'progress'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
