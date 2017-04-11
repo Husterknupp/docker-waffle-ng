@@ -1,9 +1,9 @@
 <main>
   <h1>Popular Docker Container</h1>
   <img src="../assets/images/angular.png">
-  <button type="button" class="btn btn-primary">{{selectedHero.name}}</button>
+  <button *ngIf="selectedHero" type="button" class="btn btn-primary">{{selectedHero.name}}</button>
   <!-- TODO always show search bar -->
-  <input [(ngModel)]="selectedHero.name" placeholder="name" (keyup)="onKey($event)">
+  <input *ngIf="selectedHero" [(ngModel)]="selectedHero.name" placeholder="name" (keyup)="onKey($event)">
   <div align="left">
   	<hero-card *ngFor="let hero of heroes" [hero]="hero" [selectedHero]="selectedHero" (click)="onSelect(hero)"></hero-card>
   </div>

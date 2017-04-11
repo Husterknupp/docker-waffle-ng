@@ -21,6 +21,13 @@ export class CardComponent {
 	@Input() hero: Hero;
 	@Input() selectedHero: Hero;
 
+	change() : void;
+
+	change() {
+		this.hero.id = this.hero.id + 1;
+		console.log(this.hero.id)
+	}
+
 	onHoverOverHero(hero: Hero) {
   	hero.hover = true;
   }
