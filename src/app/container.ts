@@ -1,4 +1,4 @@
-export class Hero {
+export class Container {
   id: number;
   name: string;
   hover: boolean;

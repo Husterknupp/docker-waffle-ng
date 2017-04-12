@@ -4,37 +4,37 @@ import '../assets/css/styles.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service'
+import { Container } from './container';
+import { ContainerService } from './container.service'
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [HeroService]
+  providers: [ContainerService]
 })
 export class AppComponent implements OnInit { 
-  heroes: Hero[];
-  selectedHero: Hero;
+  containers: Container[];
+  selectedContainer: Container;
 
-	constructor(private heroService: HeroService) { }
+	constructor(private containerService: ContainerService) { }
 
-  getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => {
-    	this.heroes = heroes;
-    	this.selectedHero = this.heroes[0];
-    });
+	ngOnInit(): void {
+    this.getContainers();
   }
 
-   ngOnInit(): void {
-    this.getHeroes();
+  getContainers(): void {
+    this.containerService.getContainers().then(containers => {
+    	this.containers = containers;
+      this.selectedContainer = this.containers[0]
+    });
   }
 
   onKey(event: any) {
     console.log(event.target.value);
   }
 
-	onSelect(hero: Hero): void {
-	  this.selectedHero = hero;
+	onSelect(container: Container): void {
+	  this.selectedContainer = container;
 	}
 }

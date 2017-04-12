@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { Hero } from './hero';
+import { Container } from './container';
 
 @Component({
-  selector: 'hero-card',
+  selector: 'container-card',
   template: `
-	<div class="card w-75" [class.card-outline-warning]="hero.hover" 
-	(mouseover)='onHoverOverHero(hero)' (mouseout)='onHoverHeroOut(hero)'>
+	<div class="card w-75" [class.card-outline-warning]="container.hover" 
+	(mouseover)='onHoverOverContainer(container)' (mouseout)='onHoverContainerOut(container)'>
 	  <div class="card-block">
-	    <h3 class="card-title">{{hero.name}}</h3>
-	    <p class="card-text">{{hero.id}}</p>
-	    <div *ngIf="hero.id == selectedHero.id">
-	    	<hero-detail [hero]="selectedHero"></hero-detail>
+	    <h3 class="card-title">{{container.name}}</h3>
+	    <p class="card-text">{{container.id}}</p>
+	    <div *ngIf="container.id == selectedContainer.id">
+	    	<container-detail [container]="selectedContainer"></container-detail>
 	    </div>
 	    <a href="#" class="btn btn-primary">Button</a>
 	  </div>
@@ -18,21 +18,14 @@ import { Hero } from './hero';
   `
 })
 export class CardComponent {
-	@Input() hero: Hero;
-	@Input() selectedHero: Hero;
+	@Input() container: Container;
+	@Input() selectedContainer: Container;
 
-	change() : void;
-
-	change() {
-		this.hero.id = this.hero.id + 1;
-		console.log(this.hero.id)
-	}
-
-	onHoverOverHero(hero: Hero) {
-  	hero.hover = true;
+	onHoverOverContainer(container: Container) {
+  	container.hover = true;
   }
   
-  onHoverHeroOut(hero: Hero) {
-  	hero.hover = false;
+  onHoverContainerOut(container: Container) {
+  	container.hover = false;
   }
 }
