@@ -8,7 +8,7 @@ import { Container } from './container';
 import { ContainerService } from './container.service'
 
 @Component({
-  selector: 'my-app',
+  selector: 'sg-hi-docker',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [ContainerService]
