@@ -7,3 +7,8 @@ npm start
 
 ### prod mode (dist folder)
 npm run build
+
+---
+
+*ideas*
+Connect component to en.wikipedia entry | make wiki text available in search | show only list of containers on app startup and load single card on app click
