@@ -8,6 +8,7 @@ import { ContainerDetailComponent } from './container-detail.component';
 import { CardComponent } from './card.component';
 import { ContainerComponent } from './container.component';
 import { ContainerService } from './container.service';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,13 @@ import { ContainerService } from './container.service';
       {
         path: 'containers',
         component: ContainerComponent // component to create on that path
+      }, {
+        path: 'dashboard',
+        component: DashboardComponent
+      }, {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
       }
     ])
   ],
@@ -24,7 +32,8 @@ import { ContainerService } from './container.service';
     AppComponent,
     ContainerDetailComponent,
     CardComponent,
-    ContainerComponent
+    ContainerComponent,
+    DashboardComponent
   ],
   providers: [
     ContainerService 

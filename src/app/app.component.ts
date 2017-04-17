@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
 	selector: 'sg-hi-docker',
 	template: `
 	  <h1>{{title}}</h1>
-	  <a routerLink="/containers">Containers</a>
+	  <nav>
+		  <a routerLink="/containers">Containers</a>
+			<a routerLink="/dashboard">Dashboard</a>
+	  </nav>
 	  <router-outlet></router-outlet>
 	`
 })
