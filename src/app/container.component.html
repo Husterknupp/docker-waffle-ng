@@ -1,7 +1,6 @@
 <main>
   <img src="../assets/images/angular.png">
   <button *ngIf="selectedContainer" type="button" class="btn btn-primary">{{selectedContainer.name}}</button>
-  <!-- TODO always show search bar -->
   <input *ngIf="selectedContainer" [(ngModel)]="selectedContainer.name" placeholder="name" (keyup)="onKey($event)">
   <div align="left">
   	<container-card *ngFor="let container of containers" [container]="container" [selectedContainer]="selectedContainer" 

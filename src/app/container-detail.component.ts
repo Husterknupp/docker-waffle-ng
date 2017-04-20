@@ -1,19 +1,35 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Location }                 from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+
 import { Container } from './container';
+import { ContainerService } from './container.service';
 
 @Component({
   selector: 'container-detail',
-  template: `
-  	<h2>{{container.name}} details!</h2>
-		<div>
-			<label>id: </label>{{container.id}}
-		</div>
-		<div>
-		    <label>name: </label>
-		    <input [(ngModel)]="container.name" placeholder="name"/>
-		</div>
-  `
+  templateUrl: './container-detail.component.html'
 })
-export class ContainerDetailComponent {
-	@Input() container: Container;
+export class ContainerDetailComponent implements OnInit {
+    @Input() container: Container;
+
+    constructor(
+        private containerService: ContainerService,
+        private route: ActivatedRoute,
+        private location: Location
+    ) {}
+
+    ngOnInit(): void {
+        this.route.params
+            .switchMap((params: Params) => this.containerService.getContainer(+params['id']))
+            .subscribe(container => {
+                if (container != null) {
+                    this.container = container;
+                }
+            });
+    }
+
+    goBack(): void {
+        this.location.back();
+    }
 }

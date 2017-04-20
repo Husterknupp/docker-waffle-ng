@@ -4,7 +4,7 @@ import { Container } from './container';
 @Component({
   selector: 'container-card',
   template: `
-	<div class="card w-75" [class.card-outline-warning]="container.hover" 
+	<div class="card w-75" [class.card-outline-warning]="container.hover"
 	(mouseover)='onHoverOverContainer(container)' (mouseout)='onHoverContainerOut(container)'>
 	  <div class="card-block">
 	    <h3 class="card-title">{{container.name}}</h3>
@@ -21,11 +21,11 @@ export class CardComponent {
 	@Input() container: Container;
 	@Input() selectedContainer: Container;
 
-	onHoverOverContainer(container: Container) {
-  	container.hover = true;
-  }
+    onHoverOverContainer(container: Container) {
+        container.hover = true;
+    }
   
-  onHoverContainerOut(container: Container) {
-  	container.hover = false;
-  }
+    onHoverContainerOut(container: Container) {
+        container.hover = false;
+    }
 }

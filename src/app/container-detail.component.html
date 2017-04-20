@@ -1,0 +1,9 @@
+<h2>{{container.name}} details!</h2>
+<div>
+    <label>id: </label>{{container.id}}
+</div>
+<div>
+    <label>name: </label>
+    <input [(ngModel)]="container.name" placeholder="name"/>
+</div>
+<button (click)="goBack()">Back</button>
